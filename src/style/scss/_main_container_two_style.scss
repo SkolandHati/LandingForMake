@@ -1,0 +1,17 @@
+@import "Modifier/modifier";
+
+.container_content__two{
+  grid-column-start: 2;
+  display: grid;
+  gap: 20px;
+}
+
+.main_block__two{
+  width: $default_width;
+}
+
+.main_text__two{
+  width: $default_width;
+  line-height: 24px;
+  opacity: 0.8;
+}

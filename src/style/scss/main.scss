@@ -1,0 +1,33 @@
+@import "media";
+@import "../font/Graphik_LCG_font";
+@import "header_style";
+@import "main_menu_style";
+@import "main_container_one_style";
+@import "main_container_two_style";
+@import "main_container_three";
+
+$default: 0;
+
+body {
+  margin: $default;
+  padding: $default;
+  font-family: 'Graphik LCG', sans-serif, Arial;
+}
+
+h1{
+  margin: $default;
+  padding: $default;
+}
+h2{
+  margin: $default;
+  padding: $default;
+}
+h3{
+  margin: $default;
+  padding: $default;
+}
+p{
+  margin: $default;
+  padding: $default;
+}
+

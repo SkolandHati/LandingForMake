@@ -1,0 +1,63 @@
+@import "Modifier/modifier";
+
+.logo{
+  width: 40px;
+  height: 40px
+}
+.container_image{
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.header{
+  display: flex;
+  width: 97.5%;
+  margin: 2.5%;
+  justify-content: space-between;
+}
+.header_block{
+  display: flex;
+  gap: 30px
+}
+.header_author__name{
+  display: grid;
+  gap: 8px;
+}
+.author__first_name,.author__last_name{
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.author__first_name:hover, .author__last_name:hover{
+  color: black;
+  opacity: 1;
+}
+
+.author__first_name{
+  opacity: $mood_opacity;
+}
+
+.header_menu{
+  display: grid;
+  width: 32px;
+  height: 10px;
+  position: relative;
+  gap: 8px;
+  float: right;
+  margin: auto;
+  margin-right: 2.5%;
+}
+.menu_line__one{
+  display: block;
+  width: 32px;
+  height: 2px;
+  background-color: black
+}
+.menu_line__two{
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: black;
+  margin-left: 8px
+}

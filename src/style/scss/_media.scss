@@ -1,0 +1,27 @@
+@media (min-width: 1200px) {
+  .main_container {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-row-gap: 30px;
+    column-gap: 32px;
+    width: 95%;
+    max-width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    //border: 2px solid rgb(80, 145, 27); /* Обводим зелёной линией */
+    //border-radius: 5px; /* Скругляем углы на 5 пикселей */
+  }
+}
+
+@media (max-width: 736px) {
+  .main_container {
+    width: 720px;
+    max-width: 100%;
+    //border: 2px solid rgb(27, 43, 145); /* Обводим зелёной линией */
+    //border-radius: 5px; /* Скругляем углы на 5 пикселей */
+  }
+  .main_header{
+
+  }
+}

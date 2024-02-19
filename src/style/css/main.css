@@ -1,0 +1,162 @@
+@media (min-width: 1200px) {
+  .main_container {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-row-gap: 30px;
+    column-gap: 32px;
+    width: 95%;
+    max-width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
+}
+@media (max-width: 736px) {
+  .main_container {
+    width: 720px;
+    max-width: 100%;
+  }
+}
+img {
+  width: 40px;
+  height: 40px;
+}
+
+.container_image {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  width: 97.5%;
+  margin: 2.5%;
+  justify-content: space-between;
+}
+
+.header_block {
+  display: flex;
+  gap: 30px;
+}
+
+.header_author__name {
+  display: grid;
+  gap: 8px;
+}
+
+.author__name {
+  font-size: 14px;
+}
+
+.header_menu {
+  display: grid;
+  width: 32px;
+  height: 10px;
+  position: relative;
+  gap: 8px;
+  float: right;
+  margin: auto;
+  margin-right: 2.5%;
+}
+
+.menu_line__one {
+  display: block;
+  width: 32px;
+  height: 2px;
+  background-color: black;
+}
+
+.menu_line__two {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: black;
+  margin-left: 8px;
+}
+
+.main_container__menu {
+  display: grid;
+  gap: 10px;
+  width: 170px;
+  margin-top: auto;
+}
+
+.menu_point {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.container_content__one {
+  display: grid;
+  gap: 40px;
+}
+
+.main_block {
+  display: grid;
+  gap: 15px;
+}
+
+.main_header {
+  display: grid;
+  width: 592px;
+  height: 56px;
+  font-size: 48px;
+  position: relative;
+}
+
+.main_description {
+  width: 592px;
+  height: 32px;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.main_text {
+  font-size: 16px;
+  width: 592px;
+  margin: 50px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.container_content__two {
+  grid-column-start: 2;
+  display: grid;
+  gap: 20px;
+}
+
+.main_block__two {
+  width: 592px;
+}
+
+.main_text__two {
+  width: 592px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/*# sourceMappingURL=main.css.map */
