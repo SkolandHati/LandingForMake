@@ -1,0 +1,121 @@
+@import "Modifier/modifier";
+
+.container_content__four {
+  grid-column-start: 2;
+  display: grid;
+  gap: 40px;
+}
+.main_block__four{
+  display: grid;
+  gap: 30px;
+}
+
+.main_header__four{
+  line-height: 32px;
+  font-size: 24px;
+}
+.main_text__four{
+  line-height: 24px;
+  opacity: 0.8;
+}
+
+.main_menu__toolbar{
+  display: flex;
+  width: 904px;
+  border-bottom: 1px solid #7D7D7D;
+  gap: 40px;
+}
+
+.toolbar_paragraph{
+  display: grid;
+  gap: 19px
+}
+
+.desktop, .telephone{
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: normal;
+}
+
+.telephone{
+  opacity: $mood_opacity;
+}
+
+.toolbar_line{
+  width: 66px;
+  height: 2px;
+  background-color: #3E29E3;
+}
+
+.fonts_style_container{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: grid;
+  gap: 40px;
+}
+.font_block{
+  display: flex;
+  gap: 10px;
+}
+
+.font_identifier{
+  width: 280px;
+  height: 20px;
+  font-size: 14px;
+  line-height: 20px;
+  opacity: $mood_opacity;
+}
+
+.font_text__one{
+  width: $default_width;
+  height: 56px;
+  font-size: 48px;
+  line-height: 56px;
+}
+.font_text__two{
+  width: $default_width;
+  height: 56px;
+  font-size: 32px;
+  line-height: 40px;
+}
+.font_text__three{
+  width: $default_width;
+  height: 56px;
+  font-size: 24px;
+  line-height: 32px;
+}
+.font_text__four{
+  width: $default_width;
+  height: 56px;
+  font-size: 18px;
+  line-height: 28px;
+}
+.font_text__five{
+  width: $default_width;
+  height: 56px;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: normal;
+}
+.font_text__six{
+  width: $default_width;
+  height: 56px;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: normal;
+}
+.font_text__seven{
+  width: $default_width;
+  height: 56px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: normal;
+}
+.font_text__eight{
+  width: $default_width;
+  height: 56px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: normal;
+}
+
