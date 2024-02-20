@@ -132,6 +132,60 @@ h1,h2,h3,h4,h5,p,ul,ol {
   }
 }
 
+.section-five{
+
+  .title{
+    margin-top: 64px;
+    margin-bottom: 32px;
+  }
+
+
+  .radio-buttons-checkboxes{
+    @include grid(7, minmax(60px, 80px), 32px);
+
+    .radio-buttons{
+      display: grid;
+      grid-column: 1/4;
+      gap: 24px;
+
+      .block-inputs{
+        display: flex;
+
+      input{
+        width: 24px;
+        height: 24px;
+        margin: 0;
+      }
+      label{
+        margin: auto;
+        margin-left: 16px;
+      }
+    }
+  }
+
+    .checkboxes{
+      display: grid;
+      grid-column: 5/-1;
+      gap: 24px;
+
+      .block-inputs{
+        display: flex;
+      }
+
+      input{
+        width: 24px;
+        height: 24px;
+        margin: 0;
+      }
+      label{
+        margin: auto;
+        margin-left: 16px;
+      }
+    }
+  }
+
+}
+
 .adaptive-group {
   margin-top: 64px;
 
