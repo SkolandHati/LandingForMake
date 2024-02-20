@@ -80,11 +80,55 @@ h1,h2,h3,h4,h5,p,ul,ol {
 }
 
 .section-three{
-  h2{
+  .title{
+    margin-top: 80px;
   }
+
   p{
     margin-top: 24px;
-    margin-bottom: 64px;
+    margin-bottom: 48px;
+  }
+}
+
+.section-four{
+
+  .title{
+    margin-top: 64px;
+    margin-bottom: 32px;
+  }
+
+  .accordion{
+    grid-column: 4/-1;
+    width: 904px;
+    border-bottom: 1px solid #CBCBCC;
+    padding-bottom: 15px;
+    opacity: 0.5;
+
+    &:hover{
+      cursor: pointer;
+      border-bottom-color: #3E29E3;
+      opacity: 1;
+    }
+
+    .block{
+      height: 24px;
+
+      .block-title{
+        display: flex;
+
+        .arrow{
+          width: 9px;
+          height: 6px;
+          margin: auto;
+          margin-right: 0;
+        }
+      }
+    }
+
+    p{
+      width: 592px;
+      display: none;
+    }
   }
 }
 
@@ -123,7 +167,6 @@ h1,h2,h3,h4,h5,p,ul,ol {
 
   .typography-title {
     width: 280px;
-    height: 20px;
     margin-right: 32px;
     grid-column: 1/4;
     font-weight: normal;
