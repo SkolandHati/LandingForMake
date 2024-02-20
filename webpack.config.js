@@ -29,7 +29,7 @@ module.exports = {
             { test: /\.svg$/, use: ['svg-inline-loader'] },
             { test: /\.s[ac]ss$/i,
                 use:['style-loader',
-                    {loader: 'css-loader', options: {url: true}}, {loader: 'sass-loader', options: {url: true}}]
+                    {loader: 'css-loader', options: {url: true}}, {loader: 'sass-loader'}]
             },
             {   test: /\.(png|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
