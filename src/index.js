@@ -1,29 +1,35 @@
-import {addHoverEffect} from "./modules/hover_effect";
 import "./style/scss/main.scss"
 
-let show = false
-let hoverStyle
-let accordeon = document.getElementsByClassName("accordion")
-let accordeon_title = document.getElementsByClassName("block-title")
-let text = document.getElementById("accordion-text")
+let isOpen = false
+let isDrop = false
+let accordion = document.querySelector(".accordion")
 
-accordeon[0].addEventListener('click', () => {
-    if (!show){
-        hoverStyle = ''
-        accordeon_title[0].style.color = '#3E29E3'
-        accordeon[0].style.opacity = 1
-        accordeon[0].style.borderBottom = '2px solid #3E29E3'
-        text.style.display = 'block'
-        show = true
+let dropdown = document.querySelector(".list__one")
+
+accordion.addEventListener('click', () => {
+    if (!isOpen) {
+        accordion.classList.add('accordion_open')
+        isOpen = true
     }
     else {
-        hoverStyle = 'cursor: pointer;\n' +
-            '      border-bottom-color: #3E29E3;\n' +
-            '      opacity: 1;'
-        addHoverEffect(show,"accordion", hoverStyle)
-        accordeon_title[0].style.color = '#1B1B1B'
-        accordeon[0].style.borderBottom = '1px solid #CBCBCC'
-        text.style.display = 'none'
-        show = false
+        accordion.classList.remove('accordion_open')
+        isOpen = false
     }
 })
+
+dropdown.addEventListener('click', () => {
+    let dropButton = dropdown.querySelector(".dropdown")
+    let menu = dropdown.querySelector(".dropdown-menu")
+    if (!isDrop) {
+        menu.classList.add('dropdown-menu__active')
+        dropButton.classList.add('dropdown_down')
+        isDrop = true
+    }
+    else {
+        menu.classList.remove('dropdown-menu__active')
+        dropButton.classList.remove('dropdown_down')
+        isDrop = false
+    }
+})
+
+
