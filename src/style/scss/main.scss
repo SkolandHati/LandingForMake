@@ -98,6 +98,55 @@ h1,h2,h3,h4,h5,p,ul,ol {
 
 .section-four{
   .title{
+    margin: 80px 0 48px 0;
+  }
+  .description{
+    margin-bottom: 32px;
+  }
+  .container-inputs{
+    .text-field{
+
+      .text-field__label{
+        display: block;
+        width: 280px;
+        height: 20px;
+        font-size: 12px;
+        line-height: 20px;
+        opacity: 0.5;
+      }
+
+      .text-field__input{
+        width: 280px;
+        display: block;
+        height: calc(2.25rem + 2px);
+        padding: 0 0 6px 0;
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        border: none;
+        border-bottom: 2px solid #AEADAE;
+        outline:none;
+        cursor: pointer;
+
+        &::placeholder{
+          color: #1B1B1B;
+          opacity: 1;
+        }
+        &:hover{
+          border-bottom: 2px solid #3E29E3;
+        }
+        &:focus{
+          border-bottom: 4px solid #3E29E3;
+          padding-bottom: 4px;
+        }
+      }
+    }
+  }
+}
+
+.section-five{
+  .title{
     margin: 64px 0 24px 0;
   }
   .description{
@@ -156,16 +205,19 @@ h1,h2,h3,h4,h5,p,ul,ol {
     //}
 
     .list__three{
+
       .dropdown-menu{
         display: block;
         width: 280px;
         cursor: pointer;
         transition: all .5s ease;
         box-shadow: 0 1px 2px rgb(204, 204, 204);
+        padding-top: 8px;
         li{
-          padding: 16px 24px 16px 24px;
+          padding: 8px 24px 8px 24px;
           transition: all .2s ease-in-out;
           cursor: pointer;
+          height: 24px;
           &:hover{
             color: white;
             background-color: #3E29E3;
@@ -176,7 +228,7 @@ h1,h2,h3,h4,h5,p,ul,ol {
   }
 }
 
-.section-five{
+.section-six{
   .title{
     margin: 64px 0 32px 0;
   }
@@ -329,7 +381,7 @@ h1,h2,h3,h4,h5,p,ul,ol {
   }
 }
 
-.section-six{
+.section-seven{
 
   .title{
     margin: 64px 0 32px 0;
