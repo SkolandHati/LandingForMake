@@ -232,7 +232,7 @@ h1,h2,h3,h4,h5,p,ul,ol {
   .title{
     margin: 64px 0 32px 0;
   }
-  
+
   button{
     color: white;
     width: 148px;
@@ -408,7 +408,6 @@ h1,h2,h3,h4,h5,p,ul,ol {
   }
 
   .accordion{
-    grid-column: 4/-1;
     width: 904px;
     border-bottom: 1px solid #CBCBCC;
     padding-bottom: 15px;
@@ -438,6 +437,7 @@ h1,h2,h3,h4,h5,p,ul,ol {
     p{
       width: 592px;
       display: none;
+      margin: 24px 0 30px 0;
     }
   }
 }
