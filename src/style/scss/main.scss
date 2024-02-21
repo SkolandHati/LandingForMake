@@ -66,6 +66,10 @@ h1,h2,h3,h4,h5,p,ul,ol {
   margin-top: 48px;
   margin-bottom: 80px;
 
+  h1, h3, p{
+    width: 592px;
+  }
+
   h3{
     margin-top: 16px;
     margin-bottom: 64px;
@@ -73,6 +77,9 @@ h1,h2,h3,h4,h5,p,ul,ol {
 }
 
 .section-two{
+  h1, h3, p{
+    width: 592px;
+  }
   p{
     margin-top: 24px;
     margin-bottom: 64px;
@@ -100,43 +107,70 @@ h1,h2,h3,h4,h5,p,ul,ol {
   .container{
     @include grid(3, minmax(180px, 272px), 32px);
 
-    .list__one{
-      grid-column-start: 1;
-      select{
-        width: 280px;
-      }
-    }
-    .list__two{
-      width: 280px;
-      grid-column-start: 2;
-      select{
-        width: 280px;
-      }
-    }
-    .list__three{
-      width: 280px;
-      grid-column-start: 3;
-      select{
-        width: 280px;
+    .list__one,.list__two,.list__three{
+      ul{
+        list-style: none;
+        li{
+          a{
+            text-decoration: none;
+          }
+        }
       }
     }
 
-    .list__one{
+    .dropdown{
       width: 280px;
-      select{
-        width: 280px;
+      cursor: pointer;
+      transition: all .5s ease;
+      li{
+        list-style: none;
+        padding-bottom: 6px;
+        border-bottom: 2px solid #7D7D7D;
+
+        &:hover{
+          border-bottom: 2px solid #3E29E3;
+        }
+
+        a{
+          height: 24px;
+          text-decoration: none;
+          display: block;
+
+          i{
+            margin-left: 105px;
+          }
+        }
+
+        ul{
+          display: none;
+        }
       }
     }
-    .list__two{
-      width: 280px;
-      select{
-        width: 280px;
-      }
-    }
+
+    //.list__two{
+    //  width: 280px;
+    //  grid-column-start: 2;
+    //  select{
+    //    width: 280px;
+    //  }
+    //}
+
     .list__three{
-      width: 280px;
-      select{
+      .dropdown-menu{
+        display: block;
         width: 280px;
+        cursor: pointer;
+        transition: all .5s ease;
+        box-shadow: 0 1px 2px rgb(204, 204, 204);
+        li{
+          padding: 16px 24px 16px 24px;
+          transition: all .2s ease-in-out;
+          cursor: pointer;
+          &:hover{
+            color: white;
+            background-color: #3E29E3;
+          }
+        }
       }
     }
   }
@@ -372,7 +406,6 @@ h1,h2,h3,h4,h5,p,ul,ol {
   .typography-title {
     width: 280px;
     margin-right: 32px;
-    grid-column: 1/4;
     font-weight: normal;
     opacity: 0.5;
   }
