@@ -15,16 +15,20 @@ body {
   font-family: 'Graphik LCG', sans-serif, Arial;
 }
 
+:root {
+  font-size: 16px;
+}
+
 .page {
-  min-width: 296px;
-  max-width: 424px;
+  min-width: 18.5rem;
+  max-width: 26.5rem;
   margin: auto;
-  padding: 16px;
+  padding: 1rem;
 
   @include tablet {
-    min-width: 672px;
-    max-width: 928px;
-    padding: 32px 64px;
+    min-width: 42rem;
+    max-width: 58rem;
+    padding: 2rem 4rem;
   }
 
   @include desktop {
@@ -40,12 +44,8 @@ h1,h2,h3,h4,h5,p,ul,ol {
   padding: $default;
 }
 
-// Миксины сетки
-
-@mixin grid($columns, $width, $gap) {
-  display: grid;
-  grid-template-columns: repeat($columns, $width);
-  grid-column-gap: $gap;
+img {
+  max-width: 100%;
 }
 
 @mixin flex($direction, $gap) {
@@ -57,33 +57,33 @@ h1,h2,h3,h4,h5,p,ul,ol {
 // Сетка страницы
 
 .container {
-  @media (min-width: 1200px) {
-    @include grid(12, minmax(60px, 80px), 32px);
-  }
-
-  @media (max-width: 1199px) {
-    @include grid(8, minmax(56px, 88px), 32px);
-  }
+  @include adaptiveGrid();
 }
 
 .content {
-  @media (min-width: 1200px) {
-    grid-column: 4/-1;
+  grid-column: 1/-1;
+
+  @include tablet {
+    grid-column: 3/-1;
   }
 
-  @media (max-width: 1199px) {
-    grid-column: 3/-1;
+  @include desktop {
+    grid-column: 4/-1;
   }
 }
 
 //Настройки разделов
 
-.section-one{
+.section-one {
   margin-top: 48px;
-  margin-bottom: 80px;
+  @include adaptiveGrid(4, 6, 9);
 
-  h1, h3, p{
-    width: 592px;
+  h1, h3, p {
+    grid-column: 1/-1;
+
+    @include desktop {
+      grid-column: 1/7;
+    }
   }
 
   h3{
@@ -92,17 +92,26 @@ h1,h2,h3,h4,h5,p,ul,ol {
   }
 }
 
-.section-two{
-  h1, h3, p{
-    width: 592px;
+.section-two {
+  margin-top: 80px;
+  @include adaptiveGrid(4, 6, 9);
+
+  h1, h3, p {
+    grid-column: 1/-1;
+
+    @include desktop {
+      grid-column: 1/7;
+    }
   }
-  p{
+
+  p {
     margin-top: 24px;
     margin-bottom: 64px;
   }
 }
 
 .section-three{
+
   .title{
     margin-top: 80px;
   }
@@ -110,18 +119,113 @@ h1,h2,h3,h4,h5,p,ul,ol {
   p{
     margin: 24px 0 48px 0;
   }
+
+  .container-switch-buttons{
+    display: flex;
+    gap: 32px;
+    margin-bottom: 15px;
+
+    .switch-buttons{
+      cursor: pointer;
+
+      .switch-line{
+        position: relative;
+        display: none;
+        top: 16px;
+        height: 2px;
+        color: #3E29E3;
+        background-color: #3E29E3;
+        margin: 0;
+      }
+
+      &:hover{
+        .switch-line{
+          display: block;
+        }
+      }
+
+      &_active{
+
+        .switch-line{
+
+          display: block;
+        }
+      }
+    }
+  }
+
+  hr{
+    height: 1px;
+    background-color: #CBCBCC;
+    border: none;
+    margin: 0;
+  }
+
+  .tab{
+    &__header{
+      @include flex(row, 32px);
+    }
+
+    &__content{
+      @include grid(1, 1fr, 24px);
+      grid-row-gap: 24px;
+      margin-top: 48px;
+
+      @include tablet{
+        @include grid(6, minmax(60px, 80px), 32px);
+      }
+
+      @include desktop{
+        @include grid(9, minmax(60px, 80px), 32px);
+        grid-row-gap: 48px;
+      }
+    }
+
+    .typography-title{
+      font-weight: normal;
+      color: #7D7D7D;
+
+      @include tablet{
+        grid-column: 1/3;
+      }
+
+      @include desktop{
+        grid-column: 1/4;
+      }
+    }
+
+    h2{
+      @include tablet{
+        grid-column: 3/-1;
+      }
+
+      @include desktop{
+        grid-column: 4/-1;
+      }
+    }
+  }
 }
 
-.section-four{
-  .title{
+.section-four {
+  .title {
     margin: 80px 0 48px 0;
   }
-  .description{
+
+  .description {
     margin-bottom: 32px;
   }
   .container-inputs{
-    @include grid(9, minmax(60px, 80px), 32px);
+    @include grid(1, 1fr, 0);
+    grid-row-gap: 24px;
     margin: 32px 0 64px 0;
+
+    @include tablet {
+      @include grid(2, 1fr, 32px)
+    }
+
+    @include desktop {
+      @include grid(3, minmax(244px, 304px), 32px);
+    }
 
     h4{
       color: #7D7D7D;
@@ -180,7 +284,6 @@ h1,h2,h3,h4,h5,p,ul,ol {
     }
 
     &__interactive{
-      grid-column: 1/4;
       position: relative;
       height: 120px;
 
@@ -205,7 +308,6 @@ h1,h2,h3,h4,h5,p,ul,ol {
     }
 
     &__hover{
-      grid-column: 4/7;
       position: relative;
       height: 120px;
 
@@ -227,7 +329,6 @@ h1,h2,h3,h4,h5,p,ul,ol {
     }
 
     &__focus{
-      grid-column: 7/-1;
       position: relative;
       height: 120px;
 
@@ -257,7 +358,6 @@ h1,h2,h3,h4,h5,p,ul,ol {
     }
 
     &__error{
-      grid-column: 1/4;
       position: relative;
       height: 120px;
 
@@ -285,8 +385,17 @@ h1,h2,h3,h4,h5,p,ul,ol {
     margin-bottom: 48px;
   }
 
-  .container{
-    @include grid(3, minmax(180px, 272px), 32px);
+  .form-grid{
+    @include grid(1, 1fr, 0);
+    grid-row-gap: 24px;
+
+    @include tablet {
+      @include grid(2, 1fr, 32px)
+    }
+
+    @include desktop {
+      @include grid(3, minmax(244px, 304px), 32px);
+    }
 
     .list__one,.list__two,.list__three{
       ul{
@@ -338,6 +447,16 @@ h1,h2,h3,h4,h5,p,ul,ol {
           display: none;
         }
       }
+
+      &__option {
+        &_active {
+          color: #3E29E3;
+
+          &:hover {
+            color: white;
+          }
+        }
+      }
     }
 
     .list__one{
@@ -364,15 +483,16 @@ h1,h2,h3,h4,h5,p,ul,ol {
         height: 0;
         cursor: pointer;
 
-        &__active{
+        &_active{
           height: auto;
           padding-top: 8px;
 
           animation-name: fadeInDown;
           -webkit-animation-name: fadeInDown;
-          animation-duration: 1s;
+          animation-timing-function: ease-out;
+          animation-duration: 250ms;
           animation-fill-mode: both;
-          -webkit-animation-duration: 1s;
+          -webkit-animation-duration: 250ms;
           -webkit-animation-fill-mode: both;
 
           @keyframes fadeInDown {
@@ -397,7 +517,7 @@ h1,h2,h3,h4,h5,p,ul,ol {
           }
         }
 
-        &__close{
+        &_close{
           overflow: hidden;
           height: 0;
 
@@ -413,7 +533,7 @@ h1,h2,h3,h4,h5,p,ul,ol {
           }
         }
       }
-      .dropdown-menu__active, .dropdown-menu__close{
+      .dropdown-menu_active, .dropdown-menu_close{
         transform-origin: 50% 0%;
       }
     }
@@ -426,7 +546,15 @@ h1,h2,h3,h4,h5,p,ul,ol {
   }
 
   .container-buttons{
-    @include grid(9, minmax(60px, 80px), 32px);
+    @include grid(1, 1fr, 0);
+
+    @include tablet {
+      @include grid(2, 1fr, 32px)
+    }
+
+    @include desktop {
+      @include grid(3, minmax(244px, 304px), 32px);
+    }
 
     &__prime, &__hover, &__click, &__disabled{
       h3{
@@ -458,7 +586,6 @@ h1,h2,h3,h4,h5,p,ul,ol {
     }
 
     &__prime{
-      grid-column: 1/4;
 
       h3{
         opacity: 0;
@@ -466,7 +593,6 @@ h1,h2,h3,h4,h5,p,ul,ol {
     }
 
     &__hover{
-      grid-column: 4/7;
 
       button{
         background: linear-gradient(90deg, rgb(61, 40, 221), rgb(221, 128, 237));
@@ -474,12 +600,10 @@ h1,h2,h3,h4,h5,p,ul,ol {
       }
     }
 
-    &__click{
-      grid-column: 7/-1;
-    }
+    &__click{}
 
     &__disabled{
-      grid-column: 1/4;
+      pointer-events: none;
       opacity: 0.5;
 
       button{
@@ -499,12 +623,24 @@ h1,h2,h3,h4,h5,p,ul,ol {
   }
 
   .radio-buttons-checkboxes{
-    @include grid(7, minmax(60px, 80px), 32px);
+    .radio-buttons, .checkboxes {
+      @include grid(1, 1fr, 24px);
+      grid-row-gap: 24px;
+
+      @include tablet {
+        @include grid(2, 1fr, 32px);
+      }
+
+      @include desktop {
+        @include grid(9, minmax(60px, 80px), 32px);
+      }
+    }
 
     .radio-buttons {
-      display: grid;
-      grid-column: 1/4;
-      gap: 24px;
+
+      @include desktop {
+        grid-column: 1/5;
+      }
 
       .block-inputs {
         display: flex;
@@ -574,10 +710,11 @@ h1,h2,h3,h4,h5,p,ul,ol {
         }
       }
     }
+
     .checkboxes{
       display: grid;
-      grid-column: 5/-1;
-      gap: 24px;
+      grid-column: 5/8;
+      margin-top: 24px;
 
       .block-inputs{
         display: flex;
@@ -742,6 +879,7 @@ h1,h2,h3,h4,h5,p,ul,ol {
 
 .adaptive-group {
   margin-top: 64px;
+  grid-column: 1/-1;
 
   &:first-child {
     margin-top: 48px;
@@ -749,11 +887,23 @@ h1,h2,h3,h4,h5,p,ul,ol {
 }
 
 .device {
-  @include grid(4, minmax(152px, 192px), 32px);
+  @include grid(2, minmax(56px*2+32px, 88px*2+32px), 24px);
   margin-top: 32px;
 
+  @include tablet {
+    @include grid(4, 1fr, 32px);
+  }
+
+  @include desktop {
+    @include grid(4, minmax(60px*2+32px, 80px*2+32px), 32px);
+  }
+
   &__item {
-    @include flex(column, 8px);
+    @include flex(column, 4px);
+
+    @include tabletAndDesktop {
+      @include flex(column, 8px);
+    }
   }
 
   &-image {
@@ -762,51 +912,46 @@ h1,h2,h3,h4,h5,p,ul,ol {
   }
 }
 
-.tab {
-  &__header {
-    @include flex(row, 32px);
-  }
-
-  &__content {
-    @include grid(9, minmax(60px, 80px), 32px);
-    margin-top: 48px;
-    grid-row-gap: 48px;
-  }
-
-  .typography-title {
-    width: 280px;
-    margin-right: 32px;
-    font-weight: normal;
-    opacity: 0.5;
-  }
-
-  h2 {
-    width: 592px;
-    grid-column: 4/-1;
-  }
-}
-
 .title {
   font-family: 'Graphik LCG', sans-serif, Arial;
 
   &_h1 {
-    font-size: 48px;
-    line-height: 56px;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700;
+
+    @include tabletAndDesktop {
+      font-size: 48px;
+      line-height: 56px;
+    }
   }
 
   &_h2 {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 700;
+
+    @include tabletAndDesktop {
+      font-size: 32px;
+      line-height: 40px;
+    }
   }
 
   &_h3 {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+
+    @include tabletAndDesktop {
+      font-size: 24px;
+      line-height: 32px;
+    }
   }
 
   &_h4 {
     font-size: 18px;
-    line-height: 29px;
+    line-height: 28px;
+    font-weight: 500;
   }
 }
 
@@ -814,27 +959,37 @@ h1,h2,h3,h4,h5,p,ul,ol {
   font-family: 'Graphik LCG', sans-serif, Arial;
 
   &_lead {
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+
+    @include tabletAndDesktop {
+      font-size: 24px;
+      line-height: 32px;
+    }
   }
 
   &_lg {
-    font-weight: normal;
     font-size: 18px;
     line-height: 28px;
+    font-weight: 500;
+
+    @include tabletAndDesktop {
+      font-size: 18px;
+      line-height: 28px;
+    }
   }
 
   &_md {
-    font-weight: normal;
     font-size: 16px;
     line-height: 24px;
+    font-weight: 500;
   }
 
   &_sm {
-    font-weight: normal;
     font-size: 14px;
     line-height: 20px;
+    font-weight: 500;
   }
 }
 
