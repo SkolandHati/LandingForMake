@@ -44,6 +44,19 @@ dropdown.addEventListener('click', () => {
     }
 })
 
+const burgerButton = document.querySelector('#burger-button')
+burgerButton.addEventListener('click', () => {
+    document.body.classList.add('personal-info_opened')
+    document.body.classList.add('disable-scroll')
+    document.body.classList.remove('personal-info_closed')
+})
+const closeButton = document.querySelector('#close-button')
+closeButton.addEventListener('click', () => {
+    document.body.classList.add('personal-info_closed')
+    document.body.classList.remove('disable-scroll')
+    document.body.classList.remove('personal-info_opened')
+})
+
 let switchDesktop = document.querySelector('.switch-buttons_desktop')
 let switchMobile = document.querySelector('.switch-buttons_mobile')
 
