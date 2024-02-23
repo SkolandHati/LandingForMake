@@ -1,0 +1,173 @@
+@import "mixins/media_mixin";
+
+.section-seven{
+  .title{
+    margin: 64px 0 32px 0;
+  }
+
+  .radio-buttons-checkboxes{
+    .radio-buttons, .checkboxes {
+      @include grid(1, 1fr, 24px);
+      grid-row-gap: 24px;
+
+      @include tablet {
+        @include grid(2, 1fr, 32px);
+      }
+
+      @include desktop {
+        @include grid(9, minmax(60px, 80px), 32px);
+      }
+    }
+
+    .radio-buttons {
+
+      @include desktop {
+        grid-column: 1/5;
+      }
+
+      .block-inputs {
+        display: flex;
+
+        input {
+          position: absolute;
+          z-index: -1;
+          opacity: 0;
+        }
+
+        input[type=checkbox] + label {
+          display: inline-flex;
+          align-items: center;
+          user-select: none;
+          color: #1B1B1B;
+
+          &:hover {
+            opacity: 1;
+          }
+
+          span{
+            opacity: 0.5;
+          }
+
+          span:hover{
+            opacity: 1;
+          }
+
+          input[type=checkbox]:checked + label{
+            border-color: #3E29E3;
+            background-color: #3E29E3;
+          }
+        }
+
+        input + label::before {
+          cursor: pointer;
+          content: '';
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          flex-shrink: 0;
+          flex-grow: 0;
+          border: 2px solid #adb5bd;
+          border-radius: 0.25em;
+          margin: 0 16px 0 0;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 50% 50%;
+        }
+
+        input + label:hover::before {
+          border: 2px solid #3E29E3;
+        }
+
+        input:checked + label::before {
+          -webkit-transition: all 0.2s ease;
+          -moz-transition: all 0.2s ease;
+          -o-transition: all 0.2s ease;
+          transition: all 0.2s ease;
+          border-color: #3E29E3;
+          background-color: #3E29E3;
+          opacity: 1;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 55% 45%;
+          background-image: url("../../assets/image/check/check-mark.png");
+        }
+      }
+    }
+
+    .checkboxes{
+      display: grid;
+      grid-column: 5/8;
+      margin-top: 24px;
+
+      .block-inputs{
+        display: flex;
+      }
+
+      .block-inputs {
+        display: flex;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        input {
+          position: absolute;
+          z-index: -1;
+          opacity: 0;
+        }
+
+        input + label {
+          display: inline-flex;
+          align-items: center;
+          user-select: none;
+
+          span{
+            opacity: 0.5;
+          }
+
+          span:hover{
+            opacity: 1;
+          }
+
+          input:checked + label {
+            border-color: #3E29E3;
+            background-color: #3E29E3;
+            opacity: 1;
+          }
+        }
+
+        input + label::before {
+          cursor: pointer;
+          content: '';
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          flex-shrink: 0;
+          flex-grow: 0;
+          border: 2px solid #adb5bd;
+          border-radius: 50%;
+          margin: 0 16px 0 0;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 50% 50%;
+        }
+
+        input + label:hover::before {
+          border: 2px solid #3E29E3;
+        }
+
+        input:checked + label::before {
+          -webkit-transition: all 0.2s ease;
+          -moz-transition: all 0.2s ease;
+          -o-transition: all 0.2s ease;
+          transition: all 0.2s ease;
+          border-color: #3E29E3;
+          opacity: 1;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-image: url("../../assets/image/check/oval-mark.png");
+        }
+      }
+    }
+  }
+}

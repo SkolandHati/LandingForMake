@@ -1,0 +1,85 @@
+@import "mixins/media_mixin";
+
+.section-eight{
+
+  .title{
+    margin: 64px 0 32px 0;
+  }
+
+  .accordion{
+    //width: 904px;
+    border-bottom: 1px solid #CBCBCC;
+    padding-bottom: 15px;
+    overflow: hidden;
+
+    &:hover{
+      transition: all 100ms ease-in-out;
+      cursor: pointer;
+      border-bottom-color: #3E29E3;
+
+      .block .block-title{
+        color: #1B1B1B;
+      }
+    }
+
+    .block{
+      .block-title{
+        display: flex;
+        color: #7D7D7D;
+
+        .arrow{
+          transition: 0.5s;
+          transform: rotate(-0deg);
+          width: 9px;
+          height: 6px;
+          margin: auto;
+          margin-right: 0;
+        }
+      }
+    }
+
+    #accordion-text {
+      @include grid(9, minmax(60px, 80px), 32px);
+    }
+
+    p{
+      display: none;
+      grid-column: 1/7;
+      padding: 24px 0 30px 0;
+
+      animation-name: fadeInDown;
+      -webkit-animation-name: fadeInDown;;
+      animation-duration: 3s;
+      animation-fill-mode: both;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      transform-origin: 50% 0%;
+
+    }
+
+    &_open{
+      border-bottom: 2px solid #3E29E3;
+
+      .block .block-title{
+        color: #3E29E3;
+
+        .arrow {
+          transform: rotate(180deg);
+        }
+      }
+
+      p{
+        @keyframes fadeInDown {
+          from {
+            transform: scaleY(0);
+          }
+          to {
+            transform: scaleY(1);
+          }
+        }
+        transform-origin: 50% 0%;
+        display: block;
+      }
+    }
+  }
+}

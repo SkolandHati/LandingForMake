@@ -1,0 +1,78 @@
+@import "mixins/media_mixin";
+
+.section-six{
+  .title{
+    margin-top: 232px;
+  }
+
+  .container-buttons{
+    @include grid(1, 1fr, 0);
+
+    @include tablet{
+      @include grid(2, 1fr, 32px)
+    }
+
+    @include desktop{
+      @include grid(3, minmax(244px, 304px), 32px);
+    }
+
+    &__prime, &__hover, &__click, &__disabled{
+      h3{
+        margin-top: 32px;
+        margin-bottom: 24px;
+        color: #7D7D7D;
+      }
+
+      button{
+        color: white;
+        width: 148px;
+        height: 56px;
+        border-radius: 25px;
+        border: none;
+        transition: all 0.5s;
+        background: linear-gradient(0deg, #3D28E3,#DD80ED);
+        background-size: 150%;
+
+        &:hover{
+          background: linear-gradient(90deg, rgb(61, 40, 221), rgb(221, 128, 237));
+          background-size: 100%;
+        }
+      }
+
+      span{
+        width: 84px;
+        height: 24px;
+      }
+    }
+
+    &__prime{
+
+      h3{
+        opacity: 0;
+      }
+    }
+
+    &__hover{
+
+      button{
+        background: linear-gradient(90deg, rgb(61, 40, 221), rgb(221, 128, 237));
+        background-size: 100%;
+      }
+    }
+
+    &__click{}
+
+    &__disabled{
+      pointer-events: none;
+      opacity: 0.5;
+
+      button{
+        background: linear-gradient(0deg, #CBCBCC, #CBCBCC);
+
+        &:hover{
+          background: linear-gradient(0deg, #CBCBCC, #CBCBCC)
+        }
+      }
+    }
+  }
+}

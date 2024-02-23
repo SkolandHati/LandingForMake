@@ -1,0 +1,48 @@
+@import "mixins/media_mixin";
+@import "Modifier/modifier";
+
+.section-two {
+  margin-top: 80px;
+  @include adaptiveGrid(4, 6, 9);
+
+  h1, h3, p {
+    grid-column: 1/-1;
+
+    @include desktop {
+      grid-column: 1/7;
+    }
+  }
+
+  p {
+    margin-top: 24px;
+    margin-bottom: 64px;
+  }
+
+  .adaptive-group{
+    .device{
+      @include grid(2, minmax(56px*2+32px, 88px*2+32px), 24px);
+      margin-top: 32px;
+
+      @include tablet{
+        @include grid(4, 1fr, 32px);
+      }
+
+      @include desktop{
+        @include grid(4, minmax(60px*2+32px, 80px*2+32px), 32px);
+      }
+
+      &__item{
+        @include flex(column, 4px);
+
+        @include tabletAndDesktop{
+          @include flex(column, 8px);
+        }
+      }
+
+      &-image{
+        max-width: 100%;
+        margin-top: 48px;
+      }
+    }
+  }
+}
