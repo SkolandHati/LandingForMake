@@ -44,6 +44,29 @@ dropdown.addEventListener('click', () => {
     }
 })
 
+let switchDesktop = document.querySelector('.switch-buttons_desktop')
+let switchMobile = document.querySelector('.switch-buttons_mobile')
 
+let tabDesktopTypography = document.querySelector('.tab__content-desktop')
+let tabMobileTypography = document.querySelector('.tab__content-mobile')
+
+function f()  {
+    tabDesktopTypography.classList.add('tab__content-desktop-active')
+    switchDesktop.classList.add('switch-buttons_desktop-active')
+}
+f()
+switchDesktop.addEventListener( 'click',  () => {
+    tabMobileTypography.classList.remove('tab__content-mobile-active')
+    switchMobile.classList.remove('switch-buttons_mobile-active')
+    tabDesktopTypography.classList.add('tab__content-desktop-active')
+    switchDesktop.classList.add('switch-buttons_desktop-active')
+})
+
+switchMobile.addEventListener( 'click',  () => {
+    tabDesktopTypography.classList.remove('tab__content-desktop-active')
+    switchDesktop.classList.remove('switch-buttons_desktop-active')
+    tabMobileTypography.classList.add('tab__content-mobile-active')
+    switchMobile.classList.add('switch-buttons_mobile-active')
+})
 
 

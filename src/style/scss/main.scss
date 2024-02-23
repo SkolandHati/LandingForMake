@@ -126,17 +126,39 @@ img {
     margin-bottom: 15px;
 
     .switch-buttons{
-      cursor: pointer;
 
-      .switch-line{
-        position: relative;
-        display: none;
-        top: 16px;
-        height: 2px;
-        color: #3E29E3;
-        background-color: #3E29E3;
-        margin: 0;
+      &_desktop, &_mobile{
+        cursor: pointer;
+
+        .switch-line{
+          position: relative;
+          display: none;
+          top: 16px;
+          height: 2px;
+          color: #3E29E3;
+          background-color: #3E29E3;
+          margin: 0;
+        }
+
+        &-active{
+          .switch-line{
+            position: relative;
+            display: block;
+            top: 16px;
+            height: 2px;
+            color: #3E29E3;
+            background-color: #3E29E3;
+            margin: 0;
+          }
+        }
+
+        &:hover{
+          .switch-line{
+            display: block;
+          }
+        }
       }
+
 
       &:hover{
         .switch-line{
@@ -162,22 +184,27 @@ img {
   }
 
   .tab{
+
     &__header{
       @include flex(row, 32px);
     }
 
-    &__content{
-      @include grid(1, 1fr, 24px);
-      grid-row-gap: 24px;
-      margin-top: 48px;
+    &__content-desktop, &__content-mobile{
+      display: none;
 
-      @include tablet{
-        @include grid(6, minmax(60px, 80px), 32px);
-      }
+      &-active{
+        @include grid(1, 1fr, 24px);
+        grid-row-gap: 24px;
+        margin-top: 48px;
 
-      @include desktop{
-        @include grid(9, minmax(60px, 80px), 32px);
-        grid-row-gap: 48px;
+        @include tablet{
+          @include grid(6, minmax(60px, 80px), 32px);
+        }
+
+        @include desktop{
+          @include grid(9, minmax(60px, 80px), 32px);
+          grid-row-gap: 48px;
+        }
       }
     }
 
