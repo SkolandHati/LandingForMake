@@ -1,5 +1,6 @@
 @import "mixins/media_mixin";
 @import "Modifier/modifier";
+@import "../font/fonts_style";
 
 .section-one{
   @include adaptiveGrid(4, 6, 9);
