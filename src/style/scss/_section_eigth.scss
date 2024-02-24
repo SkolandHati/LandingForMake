@@ -38,7 +38,7 @@
       }
     }
 
-    #accordion-text {
+    #accordion-text{
       @include grid(9, minmax(60px, 80px), 32px);
     }
 
@@ -63,13 +63,13 @@
       .block .block-title{
         color: #3E29E3;
 
-        .arrow {
+        .arrow{
           transform: rotate(180deg);
         }
       }
 
       p{
-        @keyframes fadeInDown {
+        @keyframes fadeInDown{
           from {
             transform: scaleY(0);
           }

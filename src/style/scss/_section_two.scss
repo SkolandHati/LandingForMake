@@ -1,28 +1,28 @@
 @import "mixins/media_mixin";
 @import "Modifier/modifier";
 
-.section-two {
+.section-two{
   margin-top: 80px;
   @include adaptiveGrid(4, 6, 9);
 
-  h1, h3, p {
+  h1, h3, p{
     grid-column: 1/-1;
 
-    @include desktop {
+    @include desktop{
       grid-column: 1/7;
     }
   }
 
-  p {
+  p{
     margin-top: 24px;
     margin-bottom: 64px;
   }
 
-  .adaptive-group {
+  .adaptive-group{
     margin-top: 64px;
     grid-column: 1/-1;
 
-    &:first-child {
+    &:first-child{
       margin-top: 48px;
     }
 

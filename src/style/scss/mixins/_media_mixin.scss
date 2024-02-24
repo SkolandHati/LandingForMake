@@ -5,13 +5,13 @@
 }
 
 @mixin tabletAndDesktop{
-  @media all and (min-width: 736px) {
+  @media all and (min-width: 736px){
     @content
   }
 }
 
 @mixin desktop{
-  @media all and (min-width: 1200px) {
+  @media all and (min-width: 1200px){
     @content
   }
 }
@@ -32,11 +32,11 @@
 @mixin adaptiveGrid($mobileColumns: 4, $tabletColumns: 8, $desktopColumns: 12){
   @include grid($mobileColumns, minmax(56px, 88px), 24px);
 
-  @include tablet {
+  @include tablet{
     @include grid($tabletColumns, minmax(56px, 88px), 32px);
   }
 
-  @include desktop {
+  @include desktop{
     @include grid($desktopColumns, minmax(60px, 80px), 32px);
   }
 }

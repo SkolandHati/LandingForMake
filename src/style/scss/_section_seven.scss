@@ -6,41 +6,41 @@
   }
 
   .radio-buttons-checkboxes{
-    .radio-buttons, .checkboxes {
+    .radio-buttons, .checkboxes{
       @include grid(1, 1fr, 24px);
       grid-row-gap: 24px;
 
-      @include tablet {
+      @include tablet{
         @include grid(2, 1fr, 32px);
       }
 
-      @include desktop {
+      @include desktop{
         @include grid(9, minmax(60px, 80px), 32px);
       }
     }
 
-    .radio-buttons {
+    .radio-buttons{
 
-      @include desktop {
+      @include desktop{
         grid-column: 1/5;
       }
 
-      .block-inputs {
+      .block-inputs{
         display: flex;
 
-        input {
+        input{
           position: absolute;
           z-index: -1;
           opacity: 0;
         }
 
-        input[type=checkbox] + label {
+        input[type=checkbox] + label{
           display: inline-flex;
           align-items: center;
           user-select: none;
           color: #1B1B1B;
 
-          &:hover {
+          &:hover{
             opacity: 1;
           }
 
@@ -58,7 +58,7 @@
           }
         }
 
-        input + label::before {
+        input + label::before{
           cursor: pointer;
           content: '';
           display: inline-block;
@@ -74,11 +74,11 @@
           background-size: 50% 50%;
         }
 
-        input + label:hover::before {
+        input + label:hover::before{
           border: 2px solid #3E29E3;
         }
 
-        input:checked + label::before {
+        input:checked + label::before{
           -webkit-transition: all 0.2s ease;
           -moz-transition: all 0.2s ease;
           -o-transition: all 0.2s ease;
@@ -103,20 +103,20 @@
         display: flex;
       }
 
-      .block-inputs {
+      .block-inputs{
         display: flex;
 
-        &:hover {
+        &:hover{
           opacity: 1;
         }
 
-        input {
+        input{
           position: absolute;
           z-index: -1;
           opacity: 0;
         }
 
-        input + label {
+        input + label{
           display: inline-flex;
           align-items: center;
           user-select: none;
@@ -129,14 +129,14 @@
             opacity: 1;
           }
 
-          input:checked + label {
+          input:checked + label{
             border-color: #3E29E3;
             background-color: #3E29E3;
             opacity: 1;
           }
         }
 
-        input + label::before {
+        input + label::before{
           cursor: pointer;
           content: '';
           display: inline-block;
@@ -152,11 +152,11 @@
           background-size: 50% 50%;
         }
 
-        input + label:hover::before {
+        input + label:hover::before{
           border: 2px solid #3E29E3;
         }
 
-        input:checked + label::before {
+        input:checked + label::before{
           -webkit-transition: all 0.2s ease;
           -moz-transition: all 0.2s ease;
           -o-transition: all 0.2s ease;
